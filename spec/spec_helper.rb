@@ -36,6 +36,7 @@ RSpec.configure do |config|
   config.before(:all, type: :feature) do
     CarrierWave.configure do |config|
       config.storage                             = :gcloud
+      config.cache_storage                       = :file
       config.gcloud_bucket                       = ENV['GCLOUD_BUCKET']
       config.gcloud_bucket_is_public             = true
       config.gcloud_authenticated_url_expiration = 600
